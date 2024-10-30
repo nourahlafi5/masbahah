@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسبحة الإلكترونية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; /* المسافة بين العدادات */
+            margin-bottom: 20px;
+        }
+        .counter-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circle {
+            width: 120px;
+            height: 120px;
+            border: 10px solid #22834a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .counter {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 10px; /* المسافة بين العدادات والأزرار */
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #137a3e;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #808488;
+            transform: translateY(-2px);
+        }
+        .reset {
+            background-color: #dc3545;
+        }
+        .reset:hover {
+            background-color: #c82333;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>المسبحة الإلكترونية</h1>
+    <div class="container">
+        <div class="counter-wrapper">
+            <div class="circle">
+                <div class="counter" id="subhanCounter">0</div>
+            </div>
+            <div class="button-container">
+                <button id="countSubhanButton">سبحان الله</button>
+            </div>
+        </div>
+        <div class="counter-wrapper">
+            <div class="circle">
+                <div class="counter" id="hamdCounter">0</div>
+            </div>
+            <div class="button-container">
+                <button id="countHamdButton">الحمد لله</button>
+            </div>
+        </div>
+        <div class="counter-wrapper">
+            <div class="circle">
+                <div class="counter" id="takbirCounter">0</div>
+            </div>
+            <div class="button-container">
+                <button id="countTakbirButton">الله أكبر</button>
+            </div>
+        </div>
+        <div class="counter-wrapper">
+            <div class="circle">
+                <div class="counter" id="istighfarCounter">0</div>
+            </div>
+            <div class="button-container">
+                <button id="countIstighfarButton">استغفر الله</button>
+            </div>
+        </div>
+        <div class="counter-wrapper">
+            <div class="circle">
+                <div class="counter" id="tawhidCounter">0</div>
+            </div>
+            <div class="button-container">
+                <button id="countTawhidButton">لا إله إلا الله</button>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="reset" id="resetButton">إعادة</button>
+    </div>
+    <div class="footer">صدقة جارية عن لافي بشير</div>
+    <script>
+        let subhanCount = 0;
+        let hamdCount = 0;
+        let takbirCount = 0;
+        let istighfarCount = 0;
+        let tawhidCount = 0;
+
+        const subhanCounter = document.getElementById('subhanCounter');
+        const hamdCounter = document.getElementById('hamdCounter');
+        const takbirCounter = document.getElementById('takbirCounter');
+        const istighfarCounter = document.getElementById('istighfarCounter');
+        const tawhidCounter = document.getElementById('tawhidCounter');
+
+        document.getElementById('countSubhanButton').addEventListener('click', () => {
+            subhanCount++;
+            if (subhanCount >= 100) {
+                subhanCount = 0;
+            }
+            subhanCounter.textContent = subhanCount;
+        });
+
+        document.getElementById('countHamdButton').addEventListener('click', () => {
+            hamdCount++;
+            if (hamdCount >= 100) {
+                hamdCount = 0;
+            }
+            hamdCounter.textContent = hamdCount;
+        });
+
+        document.getElementById('countTakbirButton').addEventListener('click', () => {
+            takbirCount++;
+            if (takbirCount >= 100) {
+                takbirCount = 0;
+            }
+            takbirCounter.textContent = takbirCount;
+        });
+
+        document.getElementById('countIstighfarButton').addEventListener('click', () => {
+            istighfarCount++;
+            if (istighfarCount >= 100) {
+                istighfarCount = 0;
+            }
+            istighfarCounter.textContent = istighfarCount;
+        });
+
+        document.getElementById('countTawhidButton').addEventListener('click', () => {
+            tawhidCount++;
+            if (tawhidCount >= 100) {
+                tawhidCount = 0;
+            }
+            tawhidCounter.textContent = tawhidCount;
+        });
+
+        document.getElementById('resetButton').addEventListener('click', () => {
+            subhanCount = 0;
+            hamdCount = 0;
+            takbirCount = 0;
+            istighfarCount = 0;
+            tawhidCount = 0;
+            subhanCounter.textContent = subhanCount;
+            hamdCounter.textContent = hamdCount;
+            takbirCounter.textContent = takbirCount;
+            istighfarCounter.textContent = istighfarCount;
+            tawhidCounter.textContent = tawhidCount;
+        });
+    </script>
+</body>
+</html>
